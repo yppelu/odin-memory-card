@@ -1,0 +1,8 @@
+@import "./reset.css";
+@import "./fonts.css";
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+}
