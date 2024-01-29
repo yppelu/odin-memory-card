@@ -1,0 +1,34 @@
+.loading-block {
+  background-color: #FFCE72;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-image {
+  background-image: url("/loading_image.png");
+
+  height: 205px;
+  width: 250px;
+
+  animation-name: loading;
+  animation-duration: 0.5s;
+  animation-timing-function: steps(6);
+  animation-iteration-count: infinite;
+}
+
+.loading-description {
+  font-size: 1.25rem;
+}
+
+@keyframes loading {
+  from {
+    background-position: 0px;
+  }
+
+  to {
+    background-position: 1500px;
+  }
+}

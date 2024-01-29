@@ -2,7 +2,8 @@
 @import "./fonts.css";
 
 body {
+  background-color: #FFCE72;
   font-family: "Josefin Sans", sans-serif;
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 600;
 }
