@@ -12,10 +12,10 @@
 .help {
   background-color: #FFCE72;
   border-radius: 0.5rem;
-  box-shadow: 0 0 0.25rem #14080e;
+  box-shadow: 0 0 0.25rem #14080E;
 
   border: 2px solid #14080E;
-  margin-top: 5rem;
+  margin-top: calc(5rem + 2px);
   padding: 1rem;
   max-width: 49ch;
   width: 95%;

@@ -1,0 +1,32 @@
+.start-window {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  padding: 1rem 0;
+  min-height: calc(100vh - 4rem - 2px);
+}
+
+.start-window__start-button {
+  background-color: #FF6B35;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  transition: box-shadow 0.15s ease-in-out;
+
+  border: 1px solid #14080E;
+  height: 3rem;
+  width: 10ch;
+}
+
+@media (hover: hover) {
+  .start-window__start-button:hover {
+    box-shadow: 0 0 0.5rem #14080E;
+  }
+}
+
+@media (max-width: 600px) {
+  .start-window {
+    flex-direction: column;
+  }
+}
