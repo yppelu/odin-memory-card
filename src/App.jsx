@@ -1,8 +1,12 @@
-import LoadingBlock from './components/LoadingBlock';
+import Header from './components/Header/Header.jsx';
+import LoadingBlock from './components/LoadingBlock/LoadingBlock.jsx';
 
 function App() {
   return (
-    <LoadingBlock />
+    <>
+      <Header />
+      <LoadingBlock />
+    </>
   );
 }
 

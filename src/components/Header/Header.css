@@ -1,0 +1,26 @@
+.header {
+  border-bottom: 2px solid #14080E;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin: 0 auto;
+  height: 4rem;
+  max-width: 1200px;
+  width: 95%;
+}
+
+.header__title {
+  font-size: 2rem;
+}
+
+.header__help-button {
+  background-color: transparent;
+  text-decoration: underline;
+  font-size: 1.5rem;
+
+  border: none;
+}

@@ -3,7 +3,13 @@
 
 body {
   background-color: #FFCE72;
+  color: #14080E;
   font-family: "Josefin Sans", sans-serif;
   font-size: 1rem;
   font-weight: 600;
+}
+
+button {
+  appearance: none;
+  cursor: pointer;
 }

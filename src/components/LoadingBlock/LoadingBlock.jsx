@@ -1,4 +1,4 @@
-import './loading-block.css';
+import './LoadingBlock.css';
 
 export default function LoadingBlock() {
   return (
