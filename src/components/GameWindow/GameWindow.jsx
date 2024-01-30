@@ -2,7 +2,7 @@ import './GameWindow.css';
 
 import Card from '../Card/Card.jsx';
 
-export default function GameWindow({ difficulty, data, changeScore, score, bestScore }) {
+export default function GameWindow({ difficulty, data, cardClick, score, bestScore }) {
   return (
     <div className="game-window">
       <div className="game-window__score-block">
@@ -14,9 +14,8 @@ export default function GameWindow({ difficulty, data, changeScore, score, bestS
           data.map(cat =>
             <Card
               key={cat.id}
-              url={cat.url}
-              description={cat.description}
-              changeScore={changeScore}
+              cat={cat}
+              cardClick={cardClick}
             />
           )
         }
