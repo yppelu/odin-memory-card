@@ -1,0 +1,37 @@
+.help-wrapper {
+  background-color: rgba(20, 8, 14, 0.2);
+
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.help {
+  background-color: #FFCE72;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0.25rem #14080e;
+
+  border: 2px solid #14080E;
+  margin-top: 5rem;
+  padding: 1rem;
+  max-width: 49ch;
+  width: 95%;
+}
+
+.help__title {
+  font-size: 1.5rem;
+}
+
+.help__description {}
+
+.help__close-button {
+  background-color: #FF6B35;
+  border-radius: 0.25rem;
+
+  border: 1px solid #14080E;
+  margin-top: 1rem;
+  padding: 0.25rem 1rem;
+}
