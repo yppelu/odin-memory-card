@@ -16,19 +16,36 @@
 }
 
 .easy {
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 200px);
   grid-template-rows: repeat(2, 200px);
   max-width: 600px;
 }
 
 .medium {
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, 200px);
   grid-template-rows: repeat(2, 200px);
   max-width: 1000px;
 }
 
 .hard {
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, 200px);
   grid-template-rows: repeat(3, 200px);
   max-width: 1000px;
+}
+
+@media (max-width: 425px) {
+  .easy {
+    grid-template-columns: repeat(2, calc(100vw / 2 - 2rem));
+    grid-template-rows: repeat(3, calc(100vw / 2 - 2rem));
+  }
+
+  .medium {
+    grid-template-columns: repeat(2, calc(100vw / 2 - 2rem));
+    grid-template-rows: repeat(5, calc(100vw / 2 - 2rem));
+  }
+
+  .hard {
+    grid-template-columns: repeat(3, calc(100vw / 3 - 2rem));
+    grid-template-rows: repeat(5, calc(100vw / 3 - 2rem));
+  }
 }
