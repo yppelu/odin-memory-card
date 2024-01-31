@@ -108,7 +108,7 @@ function App() {
         isLose ? <GameEndBlock description="Wrong choice! You lose." restartGame={handleRestartGame} endGame={handleEndGame} /> : null
       }
       {
-        isWin ? <GameEndBlock description="That was the last one! You win." endGame={handleEndGame} /> : null
+        isWin ? <GameEndBlock description="That was the last one! You win." restartGame={handleRestartGame} endGame={handleEndGame} /> : null
       }
       <main className="main">
         {

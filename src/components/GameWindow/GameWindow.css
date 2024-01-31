@@ -49,3 +49,15 @@
     grid-template-rows: repeat(5, calc(100vw / 3 - 2rem));
   }
 }
+
+@media (max-width: 768px) {
+  .medium {
+    grid-template-columns: repeat(5, calc(100vw / 5 - 2rem));
+    grid-template-rows: repeat(2, calc(100vw / 5 - 2rem));
+  }
+
+  .hard {
+    grid-template-columns: repeat(3, calc(100vw / 3 - 2rem));
+    grid-template-rows: repeat(5, calc(100vw / 3 - 2rem));
+  }
+}
