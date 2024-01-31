@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 
 import { options } from './helpers/env.js';
+import getNumberOfCards from './helpers/getNumberOfCards.js';
 
 import Header from './components/Header/Header.jsx';
 import LoadingBlock from './components/LoadingBlock/LoadingBlock.jsx';
@@ -8,12 +9,6 @@ import Help from './components/Help/Help.jsx';
 import StartWindow from './components/StartWindow/StartWindow.jsx';
 import GameWindow from './components/GameWindow/GameWindow.jsx';
 import GameEndBlock from './components/GameEndBlock/GameEndBlock.jsx';
-
-function getNumberOfCards(difficulty) {
-  if (difficulty === 'easy') return 6;
-  if (difficulty === 'medium') return 10;
-  if (difficulty === 'hard') return 15;
-}
 
 function App() {
   const [isHelpOpened, setIsHelpOpened] = useState(false);
@@ -25,6 +20,7 @@ function App() {
   const [bestScore, setBestScore] = useState({ easy: 0, medium: 0, hard: 0 });
   const [isLose, setIsLose] = useState(false);
   const [isWin, setIsWin] = useState(false);
+  const [isRestart, setIsRestart] = useState(false);
 
   function handleCardClick(card) {
     if (card.clicked) {
@@ -35,6 +31,7 @@ function App() {
 
       const clicked = data.reduce((clicks, card) => card.clicked ? clicks + 1 : clicks, 0);
       if (clicked === data.length) setIsWin(true);
+      else shuffle();
     }
   }
 
@@ -46,19 +43,21 @@ function App() {
     }
   }, [score, bestScore, difficulty]);
 
-  useEffect(() => {
-    if (data !== null) {
-      const newCards = [...data];
-      newCards.sort(() => Math.random() - 0.5);
-      setData(newCards);
-    }
-  }, [score]);
+  function shuffle() {
+    const newCards = [...data];
+    newCards.sort(() => Math.random() - 0.5);
+    setData(newCards);
+  }
 
   function handleOpenHelp() { setIsHelpOpened(true); }
   function handleCloseHelp() { setIsHelpOpened(false); }
 
-  function handleStartGame(difficulty) {
-    setDifficulty(difficulty);
+  function handleStartGame(difficulty) { setDifficulty(difficulty); }
+  function handleRestartGame() {
+    setIsLose(false);
+    setIsWin(false);
+    setScore(0);
+    setIsRestart(!isRestart);
   }
   function handleEndGame() {
     setDifficulty(null);
@@ -99,14 +98,14 @@ function App() {
     if (difficulty) {
       fetchData();
     }
-  }, [difficulty]);
+  }, [difficulty, isRestart]);
 
   return (
     <>
       {isHelpOpened ? <Help closeHelp={handleCloseHelp} /> : null}
       <Header isGameOn={isGameOn} endGame={handleEndGame} openHelp={handleOpenHelp} />
       {
-        isLose ? <GameEndBlock description="Wrong choice! You lose." endGame={handleEndGame} /> : null
+        isLose ? <GameEndBlock description="Wrong choice! You lose." restartGame={handleRestartGame} endGame={handleEndGame} /> : null
       }
       {
         isWin ? <GameEndBlock description="That was the last one! You win." endGame={handleEndGame} /> : null
